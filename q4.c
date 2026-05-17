@@ -1,36 +1,27 @@
 #include<stdio.h>
 
+int fibonacci(int n){
+
+    if(n == 0){
+        return 0;
+    }
+
+    if(n == 1){
+        return 1;
+    }
+
+    return fibonacci(n-1) + fibonacci(n-2);
+
+}
+
 int main(){
 
     int num;
-    int fzero = 0;
-    int fone = 1;
-    int last;
 
-    printf("Enter the end point : ");
+    printf("Enter the position : ");
     scanf("%d",&num);
 
-    if(num == 1){
-        printf("%d", fzero);
-    }
-
-    else if(num == 2){
-        printf("%d", fone);
-    }
-
-    else{
-
-        for(int i = 3; i <= num; i++){
-
-            last = fzero + fone;
-
-            fzero = fone;
-            fone = last;
-
-        }
-
-        printf("%d", last);
-    }
+    printf("Fibonacci number is : %d", fibonacci(num));
 
     return 0;
 }
